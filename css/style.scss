@@ -1,0 +1,200 @@
+// ### Variables
+// Spaces
+$spaceXL : 3em;
+$spaceL : 2em;
+$spaceR : 1.5em;
+$spaceM : 1em;
+$spaceS :.8em;
+$spaceXS : .6em;
+$spaceXXS : .3em;
+
+
+// Colors
+$bgLight : rgb(252, 242, 220);
+$bgColor: rgb(253, 184, 58);
+$bgDark : rgb(43, 54, 43);
+
+@keyframes slideIn {
+    0%{
+        transform:translate(110%);
+        opacity : 0;
+    }
+    100%{
+        transform:translate(0%);
+        opacity : 1;
+    }
+}
+
+body{
+    font-family: "Poppins", serif;
+    background-color: $bgDark;
+}
+h1{
+    text-align: center;
+    font-size:$spaceXL;
+    color:$bgLight;
+    text-shadow: 4px 4px 15px black;
+    text-transform: uppercase;
+}
+.container{
+    max-width:1200px;
+    width:90%;
+    margin-inline: auto;;
+
+}
+.BtnQuizz{
+    background-color: $bgColor;
+    color:$bgDark;
+    border-radius: $spaceL;
+    padding:$spaceXXS $spaceS;
+    text-decoration: none;
+    box-shadow: 3px 3px 15px rgb(73, 73, 73);
+    transition:.3s;
+    &:hover{
+        color:$bgDark;
+        background-color: $bgLight;
+    }
+}
+.Quizz{
+    padding:$spaceXL;
+    background-color: $bgLight;
+    border-radius: $spaceL;
+
+    position:relative;
+    min-height:450px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    &-headers{
+        background-color: $bgDark;
+        padding: $spaceXXS $spaceR;
+        border-radius: $spaceS;
+        font-size:1.5em;
+        color:$bgLight;
+        margin-bottom: $spaceL;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media screen AND (min-width:530px){
+            display:grid;
+            align-content: center;
+            align-items: center;
+            grid-template-columns: 4fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        p{
+            margin: 0 0 $spaceS 0;
+            @media screen AND (min-width:530px) {
+                margin:0;
+            }
+        }
+
+        &-score{
+            grid-row: 2/3;
+            &-amount{
+                
+            }
+            
+        }
+        &-question{
+            grid-row: 1/2;
+
+            &-number{
+
+            }
+            &-total{
+
+            }
+        }
+        &-submit{
+            font-size: .7em;
+            grid-row: 1/3;
+
+        }
+    }
+    &-finished{
+        display:none;
+        &-card{
+            &-image{
+                padding:$spaceXL;
+            }
+            @media screen AND (min-width : 800px ){
+                display:grid;
+                grid-template-columns: 3fr 2fr;
+                &-image{
+                    padding:$spaceXS;
+                }
+            }
+        }
+
+    }
+    &-question{
+        flex-grow:1;
+        position:absolute;
+        top:0;
+        transform:translate(100%);
+        transition: 0.3s;
+        width:100%;
+        min-height:450px;
+        display:flex;
+        box-sizing: border-box;
+
+        
+    
+        
+        &.active{
+            position:relative;
+            transform: translate(0);
+            animation:slideIn .6s ease-in-out forwards; 
+        }
+        &.done{
+            transform: translate(0);
+            animation:slideIn .6s ease-in-out forwards; 
+            position:absolute;
+        }
+        // Ces éléments BEM ne suivent pas la hierarchie d'imbrication
+        &-content{
+            flex-grow:1;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        &-error{
+            display:none;
+        }
+        &-success{
+            display:none;
+        }
+        // Reprise de la logique d'imbrication
+        &-label{
+            text-align: center;
+        }
+        &-answers{
+            display:grid;
+            grid-template-columns: repeat(auto-fill , minmax(250px,1fr));
+            gap:$spaceR;
+            &-answer{
+                background-color: $bgColor;
+                border: solid 5px $bgColor; 
+                border-radius: $spaceL;
+                padding : $spaceR;
+                box-sizing: border-box;
+                transition: .3s;
+                &:hover{
+                    cursor:pointer;
+                    background-color: $bgDark;
+                    border: solid 5px $bgDark; 
+                    color:$bgLight;
+                }
+                &.active{
+                    border: solid 5px $bgColor; 
+                    background-color: $bgDark;
+                    color:$bgLight;
+                }
+                &-text{
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
