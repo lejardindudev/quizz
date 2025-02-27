@@ -67,13 +67,13 @@ const createDomQuestionWithDatas = (quizzCard) => {
                     </div>
                 </div>
                 <div class="Quizz-question-error">
-                    <h3 class="Quizz-question-error-text">Vous avez fait une erreur, ça arrive aux meilleurs ! </h3>
+                    <h3 class="Quizz-question-error-text"><img src="img/echec.png" alt="error">Vous avez fait une erreur, ça arrive aux meilleurs ! </h3>
                     <p>Voulez vous essayer de nouveau ?</p>
                     <!-- <p>Error message here</p> -->
                     <a href="" class="Quizz-question-error-btn BtnQuizz">Réessayer</a>
                 </div>
                 <div class="Quizz-question-success">
-                <h3 class="Quizz-question-success-text">Bravo, c'est une excellente réponse !</h3>
+                <h3 class="Quizz-question-success-text"><img src="img/success.png" alt="error">Bravo, c'est une excellente réponse !</h3>
                 <p>Voulez vous continuer ?</p>
                     <!-- <p>Success message here</p> -->
 
