@@ -56,6 +56,7 @@ h1 {
   padding: 0.3em 1.5em;
   border-radius: 0.8em;
   font-size: 1.5em;
+  text-align: center;
   color: rgb(252, 242, 220);
   margin-bottom: 2em;
   display: flex;
@@ -67,8 +68,18 @@ h1 {
     display: grid;
     align-content: center;
     align-items: center;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 1fr 115px;
     grid-template-rows: 1fr 1fr;
+    text-align: start;
+  }
+  .Quizz-headers-score {
+    grid-row: 2/3;
+  }
+  .Quizz-headers-question {
+    grid-row: 1/2;
+  }
+  .Quizz-headers-submit {
+    grid-row: 1/3;
   }
 }
 .Quizz-headers p {
@@ -79,15 +90,8 @@ h1 {
     margin: 0;
   }
 }
-.Quizz-headers-score {
-  grid-row: 2/3;
-}
-.Quizz-headers-question {
-  grid-row: 1/2;
-}
 .Quizz-headers-submit {
   font-size: 0.7em;
-  grid-row: 1/3;
 }
 .Quizz-finished {
   display: none;
