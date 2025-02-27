@@ -230,7 +230,6 @@ submitElt.addEventListener("click",(e)=>{
 })
 
 // Functions
-
 // Comportement du bouton
 const handleSuccessBtnClick = (event) => {
      // Désactive le comportement natif du lien
