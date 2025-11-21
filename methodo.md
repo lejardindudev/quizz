@@ -38,7 +38,7 @@
 
 ### Inititaliser la question dans le DOM en cours
 * Créer une fonction pour reproduire l'action avec les questions a venir
-* Ajout de classe 'active' à la question
+* Ajout de classe 'active' à la question (suppresson de la classe aux autres)
 * commentaire succes / erreur personnalisé (bonus)
 * update quizzManager (question index)
 
